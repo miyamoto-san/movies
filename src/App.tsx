@@ -1,5 +1,4 @@
 import logo from "./logo.svg";
-import "./App.css";
 import { useLazyLoadQuery, graphql } from "react-relay";
 import { AppQuery } from "./__generated__/AppQuery.graphql";
 import Film from "./Film";

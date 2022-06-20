@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<b634901d250e804641a7a2adc3140837>>
+ * @generated SignedSource<<819b7dad56fd21c478639c743b0b7127>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -20,7 +20,7 @@ export type FilmDetails_filmQuery$data = {
     readonly director: string | null;
     readonly speciesConnection: {
       readonly species: ReadonlyArray<{
-        readonly name: string | null;
+        readonly " $fragmentSpreads": FragmentRefs<"Species_species">;
       } | null> | null;
     } | null;
     readonly " $fragmentSpreads": FragmentRefs<"FilmDetailsReleaseDate_film">;
@@ -71,13 +71,6 @@ v5 = {
   "alias": null,
   "args": null,
   "kind": "ScalarField",
-  "name": "name",
-  "storageKey": null
-},
-v6 = {
-  "alias": null,
-  "args": null,
-  "kind": "ScalarField",
   "name": "id",
   "storageKey": null
 };
@@ -120,7 +113,11 @@ return {
                 "name": "species",
                 "plural": true,
                 "selections": [
-                  (v5/*: any*/)
+                  {
+                    "args": null,
+                    "kind": "FragmentSpread",
+                    "name": "Species_species"
+                  }
                 ],
                 "storageKey": null
               }
@@ -175,30 +172,36 @@ return {
                 "plural": true,
                 "selections": [
                   (v5/*: any*/),
-                  (v6/*: any*/)
+                  {
+                    "alias": null,
+                    "args": null,
+                    "kind": "ScalarField",
+                    "name": "name",
+                    "storageKey": null
+                  }
                 ],
                 "storageKey": null
               }
             ],
             "storageKey": null
           },
-          (v6/*: any*/)
+          (v5/*: any*/)
         ],
         "storageKey": null
       }
     ]
   },
   "params": {
-    "cacheID": "78a89ac8b641d4fc912c650aaf45f872",
+    "cacheID": "a4db6a0774b54f21c15b7588cc626895",
     "id": null,
     "metadata": {},
     "name": "FilmDetails_filmQuery",
     "operationKind": "query",
-    "text": "query FilmDetails_filmQuery(\n  $filmId: ID!\n) {\n  film(id: $filmId) {\n    ...FilmDetailsReleaseDate_film\n    title\n    episodeID\n    director\n    speciesConnection {\n      species {\n        name\n        id\n      }\n    }\n    id\n  }\n}\n\nfragment FilmDetailsReleaseDate_film on Film {\n  releaseDate\n}\n"
+    "text": "query FilmDetails_filmQuery(\n  $filmId: ID!\n) {\n  film(id: $filmId) {\n    ...FilmDetailsReleaseDate_film\n    title\n    episodeID\n    director\n    speciesConnection {\n      species {\n        ...Species_species\n        id\n      }\n    }\n    id\n  }\n}\n\nfragment FilmDetailsReleaseDate_film on Film {\n  releaseDate\n}\n\nfragment Species_species on Species {\n  id\n  name\n}\n"
   }
 };
 })();
 
-(node as any).hash = "74b4fdf1e17e7a2657715ae98f3f36bc";
+(node as any).hash = "d768db9016c0299b232fad0136672668";
 
 export default node;

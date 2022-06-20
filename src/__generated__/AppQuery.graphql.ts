@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<de183fc0c2f0c4a9da884cff6c27f3df>>
+ * @generated SignedSource<<7432153e3d5a1b5eeef643697a3899bc>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -121,20 +121,6 @@ return {
                     "kind": "ScalarField",
                     "name": "title",
                     "storageKey": null
-                  },
-                  {
-                    "alias": null,
-                    "args": null,
-                    "kind": "ScalarField",
-                    "name": "director",
-                    "storageKey": null
-                  },
-                  {
-                    "alias": null,
-                    "args": null,
-                    "kind": "ScalarField",
-                    "name": "openingCrawl",
-                    "storageKey": null
                   }
                 ],
                 "storageKey": null
@@ -148,12 +134,12 @@ return {
     ]
   },
   "params": {
-    "cacheID": "1b4629126797a5e51e4bef2a65a8de79",
+    "cacheID": "ad366c0e0438e5565e433c243d2baa2d",
     "id": null,
     "metadata": {},
     "name": "AppQuery",
     "operationKind": "query",
-    "text": "query AppQuery {\n  allFilms {\n    edges {\n      node {\n        id\n        ...Film_film\n      }\n    }\n  }\n}\n\nfragment Film_film on Film {\n  id\n  title\n  director\n  openingCrawl\n}\n"
+    "text": "query AppQuery {\n  allFilms {\n    edges {\n      node {\n        id\n        ...Film_film\n      }\n    }\n  }\n}\n\nfragment Film_film on Film {\n  id\n  title\n}\n"
   }
 };
 })();

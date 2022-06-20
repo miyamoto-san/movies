@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<1cd60c852ac84827db3744de8b426042>>
+ * @generated SignedSource<<c5e999f723db885842e2fe53b6c49d03>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -10,21 +10,23 @@
 
 import { Fragment, ReaderFragment } from 'relay-runtime';
 import { FragmentRefs } from "relay-runtime";
-export type Film_film$data = {
+export type FilmListFilter_species$data = ReadonlyArray<{
   readonly id: string;
-  readonly title: string | null;
-  readonly " $fragmentType": "Film_film";
-};
-export type Film_film$key = {
-  readonly " $data"?: Film_film$data;
-  readonly " $fragmentSpreads": FragmentRefs<"Film_film">;
-};
+  readonly name: string | null;
+  readonly " $fragmentType": "FilmListFilter_species";
+}>;
+export type FilmListFilter_species$key = ReadonlyArray<{
+  readonly " $data"?: FilmListFilter_species$data;
+  readonly " $fragmentSpreads": FragmentRefs<"FilmListFilter_species">;
+}>;
 
 const node: ReaderFragment = {
   "argumentDefinitions": [],
   "kind": "Fragment",
-  "metadata": null,
-  "name": "Film_film",
+  "metadata": {
+    "plural": true
+  },
+  "name": "FilmListFilter_species",
   "selections": [
     {
       "alias": null,
@@ -37,14 +39,14 @@ const node: ReaderFragment = {
       "alias": null,
       "args": null,
       "kind": "ScalarField",
-      "name": "title",
+      "name": "name",
       "storageKey": null
     }
   ],
-  "type": "Film",
+  "type": "Species",
   "abstractKey": null
 };
 
-(node as any).hash = "7d67c2a1aa2a816895950dfa965fd804";
+(node as any).hash = "8eaa939a100d2ddafbb819d2e67421d0";
 
 export default node;

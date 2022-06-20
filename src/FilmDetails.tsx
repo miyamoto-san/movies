@@ -36,7 +36,7 @@ const FilmDetails: FC<Props> = ({ preloadedQuery }) => {
           director
           speciesConnection {
             species {
-              ...Species_species
+              name
             }
           }
         }

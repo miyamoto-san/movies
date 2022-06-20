@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import { useLazyLoadQuery, graphql } from "react-relay";
 import { AppQuery } from "./__generated__/AppQuery.graphql";
-import Film from "./Film";
+import Film from "./relays/Film";
 
 const App = () => {
   const data = useLazyLoadQuery<AppQuery>(

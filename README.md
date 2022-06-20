@@ -1,1 +1,6 @@
-# movies
+# Kodtest Unikum
+Vi vill att du ska lista alla starwars filmer från SWAPI-GraphQL apiet samt få dom att se presentabla ut. Vi har konfigurerat relay att gå mot https://swapi-graphql.netlify.app/.netlify/functions/index och här https://swapi-graphql.netlify.app/ kan du utforska vilka delar som finns i api:et.Beroende på vilken IDE du använder så finns det plugins för graphql och relay som kan hjälpa.
+
+* Stila varje poster för filmen likt bilden vi skickat med. Som du kommer märka så saknas det data i fragmentet för att skriva ut allt i bilden.Lägg till dom delarna som saknas (openingCrawl, director, releaseDate). Här stöter du på relay som är ett ramverk för att hämta data från ett graphql-api. Efter du lagt till fälten i fragmentet som saknas måste du köra `yarn relay`  i mappen för kodtestet. Om du inte lyckas med detta direkt så titta online om du hittar något hur du gör detta eller hoppa över det och ta bara med rubriken.Hur du stilar väljer du själv men vi kommer titta efter vilken teknik du använder samt hur strukturen ser ut.
+* Få listningen av alla filmer att lägga sig snyggt i översikten tillsammans med dom andra filmerna. Tänk gärna responsivt och utgå från vad du själv tycker blir bra.
+* Gör en egen vy för varje enskild film som man kan klicka in på och läsa mer om filmerna. Vilka planeter var dom på i filmerna? Vilka karaktärer var med?Använd ramverk eller egna tekniker om du tycker det passar bättre. Vi är intresserad av tankarna bakom valen och utförandet lika mycket som själva utförandet.

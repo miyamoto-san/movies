@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<7a6e2eb7605378cfb66892757480b18b>>
+ * @generated SignedSource<<7cbe2562e5be509f79dc75d14f8bb005>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -32,6 +32,13 @@ var v0 = {
   "args": null,
   "kind": "ScalarField",
   "name": "id",
+  "storageKey": null
+},
+v1 = {
+  "alias": null,
+  "args": null,
+  "kind": "ScalarField",
+  "name": "name",
   "storageKey": null
 };
 return {
@@ -142,6 +149,61 @@ return {
                     "kind": "ScalarField",
                     "name": "openingCrawl",
                     "storageKey": null
+                  },
+                  {
+                    "alias": null,
+                    "args": null,
+                    "concreteType": "FilmSpeciesConnection",
+                    "kind": "LinkedField",
+                    "name": "speciesConnection",
+                    "plural": false,
+                    "selections": [
+                      {
+                        "alias": null,
+                        "args": null,
+                        "concreteType": "Species",
+                        "kind": "LinkedField",
+                        "name": "species",
+                        "plural": true,
+                        "selections": [
+                          (v1/*: any*/),
+                          (v0/*: any*/)
+                        ],
+                        "storageKey": null
+                      }
+                    ],
+                    "storageKey": null
+                  },
+                  {
+                    "alias": null,
+                    "args": null,
+                    "concreteType": "FilmStarshipsConnection",
+                    "kind": "LinkedField",
+                    "name": "starshipConnection",
+                    "plural": false,
+                    "selections": [
+                      {
+                        "alias": null,
+                        "args": null,
+                        "concreteType": "Starship",
+                        "kind": "LinkedField",
+                        "name": "starships",
+                        "plural": true,
+                        "selections": [
+                          (v1/*: any*/),
+                          {
+                            "alias": null,
+                            "args": null,
+                            "kind": "ScalarField",
+                            "name": "model",
+                            "storageKey": null
+                          },
+                          (v0/*: any*/)
+                        ],
+                        "storageKey": null
+                      }
+                    ],
+                    "storageKey": null
                   }
                 ],
                 "storageKey": null
@@ -155,12 +217,12 @@ return {
     ]
   },
   "params": {
-    "cacheID": "d4259943d26df02474d3699bb400e59c",
+    "cacheID": "52cef5611f5c68df99da0bbe717020ae",
     "id": null,
     "metadata": {},
     "name": "AppQuery",
     "operationKind": "query",
-    "text": "query AppQuery {\n  allFilms {\n    edges {\n      node {\n        id\n        ...Film_film\n      }\n    }\n  }\n}\n\nfragment Film_film on Film {\n  id\n  title\n  director\n  releaseDate\n  openingCrawl\n}\n"
+    "text": "query AppQuery {\n  allFilms {\n    edges {\n      node {\n        id\n        ...Film_film\n      }\n    }\n  }\n}\n\nfragment Film_film on Film {\n  id\n  title\n  director\n  releaseDate\n  openingCrawl\n  speciesConnection {\n    species {\n      name\n      id\n    }\n  }\n  starshipConnection {\n    starships {\n      name\n      model\n      id\n    }\n  }\n}\n"
   }
 };
 })();

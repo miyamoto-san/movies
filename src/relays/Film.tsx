@@ -30,9 +30,28 @@ const Film = ({ film }: Props) => {
         director
         releaseDate
         openingCrawl
+        speciesConnection {
+          species {
+            name
+          }
+        }
+        starshipConnection {
+          starships {
+            name
+            model
+          }
+        }
       }
     `,
     film
+  );
+
+  const species = data?.speciesConnection?.species?.map(
+    (species) => species?.name
+  );
+
+  const starships = data?.starshipConnection?.starships?.map(
+    (starship) => `${starship?.name} (${starship?.model})`
   );
 
   return (
@@ -73,6 +92,26 @@ const Film = ({ film }: Props) => {
           <p>{data?.openingCrawl}</p>
         </Col>
       </Row>
+      {isOpen && (
+        <>
+          <Row align="start">
+            <Col size={10}>
+              <strong>species</strong>
+            </Col>
+            <Col size={90}>
+              <p>{species?.join(", ")}</p>
+            </Col>
+          </Row>
+          <Row align="start">
+            <Col size={10}>
+              <strong>starships</strong>
+            </Col>
+            <Col size={90}>
+              <p>{starships?.join(", ")}</p>
+            </Col>
+          </Row>
+        </>
+      )}
       <Row>
         <Col size={33.33} />
         <Col justify="center" size={33.33}>

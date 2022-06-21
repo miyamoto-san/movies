@@ -28,11 +28,11 @@ const App = () => {
 
   return (
     <Layout>
-        <List>
-          {films.map((film) => (
-            <Film key={film?.id} film={film ?? null} />
-          ))}
-        </List>
+      <List>
+        {films.map((film) => (
+          <Film key={film?.id} film={film ?? null} />
+        ))}
+      </List>
     </Layout>
   );
 };

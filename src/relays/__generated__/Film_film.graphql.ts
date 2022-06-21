@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<3bb1905cd8f1e474f5cde4ded1f49521>>
+ * @generated SignedSource<<2c517b190fde3a6067b3432fc348ec0b>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -16,6 +16,17 @@ export type Film_film$data = {
   readonly director: string | null;
   readonly releaseDate: string | null;
   readonly openingCrawl: string | null;
+  readonly speciesConnection: {
+    readonly species: ReadonlyArray<{
+      readonly name: string | null;
+    } | null> | null;
+  } | null;
+  readonly starshipConnection: {
+    readonly starships: ReadonlyArray<{
+      readonly name: string | null;
+      readonly model: string | null;
+    } | null> | null;
+  } | null;
   readonly " $fragmentType": "Film_film";
 };
 export type Film_film$key = {
@@ -23,7 +34,15 @@ export type Film_film$key = {
   readonly " $fragmentSpreads": FragmentRefs<"Film_film">;
 };
 
-const node: ReaderFragment = {
+const node: ReaderFragment = (function(){
+var v0 = {
+  "alias": null,
+  "args": null,
+  "kind": "ScalarField",
+  "name": "name",
+  "storageKey": null
+};
+return {
   "argumentDefinitions": [],
   "kind": "Fragment",
   "metadata": null,
@@ -63,12 +82,66 @@ const node: ReaderFragment = {
       "kind": "ScalarField",
       "name": "openingCrawl",
       "storageKey": null
+    },
+    {
+      "alias": null,
+      "args": null,
+      "concreteType": "FilmSpeciesConnection",
+      "kind": "LinkedField",
+      "name": "speciesConnection",
+      "plural": false,
+      "selections": [
+        {
+          "alias": null,
+          "args": null,
+          "concreteType": "Species",
+          "kind": "LinkedField",
+          "name": "species",
+          "plural": true,
+          "selections": [
+            (v0/*: any*/)
+          ],
+          "storageKey": null
+        }
+      ],
+      "storageKey": null
+    },
+    {
+      "alias": null,
+      "args": null,
+      "concreteType": "FilmStarshipsConnection",
+      "kind": "LinkedField",
+      "name": "starshipConnection",
+      "plural": false,
+      "selections": [
+        {
+          "alias": null,
+          "args": null,
+          "concreteType": "Starship",
+          "kind": "LinkedField",
+          "name": "starships",
+          "plural": true,
+          "selections": [
+            (v0/*: any*/),
+            {
+              "alias": null,
+              "args": null,
+              "kind": "ScalarField",
+              "name": "model",
+              "storageKey": null
+            }
+          ],
+          "storageKey": null
+        }
+      ],
+      "storageKey": null
     }
   ],
   "type": "Film",
   "abstractKey": null
 };
+})();
 
-(node as any).hash = "dbae23dc62e2b1550c59a974681e131e";
+(node as any).hash = "a0c432cbee69cc200493ccfd3ec1d860";
 
 export default node;

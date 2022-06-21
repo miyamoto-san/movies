@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import theme from "./theme";
 
 export default createGlobalStyle`
 * {
@@ -8,5 +9,6 @@ export default createGlobalStyle`
   font-family: 'Open Sans', sans-serif;
   background-color: #219ebc;
   color: #023047;
+  font-size: ${theme.fontSize.medium};
 }
 `;

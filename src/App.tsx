@@ -31,9 +31,7 @@ const App = () => {
         <p>Filmer</p>
         <ul>
           {films.map((film) => (
-            <Card>
-              <Film key={film?.id} film={film ?? null} />
-            </Card>
+            <Film key={film?.id} film={film ?? null} />
           ))}
         </ul>
     </Layout>

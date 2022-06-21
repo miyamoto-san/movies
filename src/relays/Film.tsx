@@ -5,6 +5,7 @@ import {
   Col,
   ReleaseDate,
   Name,
+  itemVariants,
 } from "../styles";
 import { Film_film$key } from "./__generated__/Film_film.graphql";
 import { format } from "date-fns";
@@ -28,7 +29,17 @@ const Film = ({ film }: Props) => {
   );
 
   return (
-    <Container key={data?.id}>
+    <Container
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ duration: 1 }}
+      variants={{
+        visible: { opacity: 1, x: 0 },
+        hidden: { opacity: 0, x: 10 },
+      }}
+      key={data?.id}
+    >
       <Row>
         <Col size={50}>
           <h1>{data?.title}</h1>
@@ -49,9 +60,7 @@ const Film = ({ film }: Props) => {
       </Row>
       <Row align="start">
         <Col size={10}>
-          <strong >
-            openingCrawl
-          </strong>
+          <strong>openingCrawl</strong>
         </Col>
         <Col size={90}>
           <p>{data?.openingCrawl}</p>

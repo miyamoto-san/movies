@@ -6,7 +6,19 @@ import {
   Col,
   ReleaseDate,
   Name,
+  itemVariants
 } from "./card";
-import { List } from "./list";
+import { List, listVariants } from "./list";
 
-export { Global, Container, CardContainer, Row, Col, ReleaseDate, Name, List };
+export {
+  Global,
+  Container,
+  CardContainer,
+  Row,
+  Col,
+  ReleaseDate,
+  Name,
+  List,
+  listVariants,
+  itemVariants,
+};

@@ -37,10 +37,11 @@ export const Row = styled.div`
 interface ColProps {
   size?: number | undefined;
   stretch?: boolean | undefined;
+  justify?: 'center' | undefined;
 }
 
 export const Col = styled.div`
-  ${({ size }: ColProps) => `width: ${size}%` || undefined};
+  ${({ size }: ColProps) => size && `width: ${size}%`};
   ${({ stretch }: ColProps) => stretch && `align-self: stretch`};
   margin: ${theme.default.spacing.medium}px 0;
   @media (max-width: 1200px) {
@@ -61,4 +62,14 @@ export const ReleaseDate = styled.time`
 
 export const Name = styled.div`
   font-size: ${theme.default.fontSize.large}px;
+`;
+
+export const ReadMore = styled.p`
+  display: flex;
+  justify-content: center;
+  text-decoration: underline;
+  cursor: pointer;
+  &:hover {
+    text-decoration: none;
+  }
 `;

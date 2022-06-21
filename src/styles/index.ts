@@ -18,5 +18,6 @@ export {
   Col,
   ReleaseDate,
   Name,
+  ReadMore,
   List,
 };

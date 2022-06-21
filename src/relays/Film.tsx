@@ -5,7 +5,7 @@ import {
   Col,
   ReleaseDate,
   Name,
-  itemVariants,
+  ReadMore
 } from "../styles";
 import { Film_film$key } from "./__generated__/Film_film.graphql";
 import { format } from "date-fns";
@@ -65,6 +65,13 @@ const Film = ({ film }: Props) => {
         <Col size={90}>
           <p>{data?.openingCrawl}</p>
         </Col>
+      </Row>
+      <Row>
+        <Col size={33.33} />
+        <Col justify="center" size={33.33}>
+          <ReadMore>Read more</ReadMore>
+        </Col>
+        <Col size={33.33} />
       </Row>
     </Container>
   );

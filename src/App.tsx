@@ -29,7 +29,6 @@ const App = () => {
 
   return (
     <Layout>
-        <h1>Filmer</h1>
         <List>
           {films.map((film) => (
             <Film key={film?.id} film={film ?? null} />

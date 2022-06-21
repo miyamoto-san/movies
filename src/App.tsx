@@ -4,7 +4,7 @@ import { AppQuery } from "./__generated__/AppQuery.graphql";
 import Film from "./relays/Film";
 import Layout from "./Layout";
 import { Card } from "./components";
-import { List, listVariants } from "./styles";
+import { List } from "./styles";
 
 const App = () => {
   const data = useLazyLoadQuery<AppQuery>(

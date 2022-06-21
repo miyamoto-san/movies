@@ -2,15 +2,6 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import theme from "./theme";
 
-export const itemVariants = {
-  open: {
-    opacity: 1,
-    transition: {
-      y: { stiffness: 1000, velocity: -100 }
-    }
-  }
-}
-
 export const Container = styled(motion.li)`
   background-color: ${theme.default.color.secondary};
   border: 1px solid ${theme.default.color.border};

@@ -6,9 +6,9 @@ import {
   Col,
   ReleaseDate,
   Name,
-  itemVariants
+  ReadMore,
 } from "./card";
-import { List, listVariants } from "./list";
+import { List } from "./list";
 
 export {
   Global,
@@ -19,6 +19,4 @@ export {
   ReleaseDate,
   Name,
   List,
-  listVariants,
-  itemVariants,
 };

@@ -16,6 +16,8 @@ export const Container = styled(motion.li)`
   border: 1px solid ${theme.default.color.border};
   padding: ${theme.default.spacing.large}px;
   margin-bottom: ${theme.default.spacing.large}px;
+  margin-left: ${theme.default.spacing.medium}px;
+  margin-right: ${theme.default.spacing.medium}px;
   border-radius: 4px;
   box-shadow: 5px 5px 0px -1px ${theme.default.color.boxShadow};
   &:last-child {

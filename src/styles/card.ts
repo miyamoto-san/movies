@@ -1,10 +1,23 @@
 import styled from "styled-components";
 import theme from "./theme";
 
-export const Container = styled.li``;
+export const Container = styled.li`
+  background-color: ${theme.default.color.secondary};
+  border: 1px solid ${theme.default.color.border};
+  padding: ${theme.default.spacing.large}px;
+  margin-bottom: ${theme.default.spacing.large}px;
+  border-radius: 4px;
+  box-shadow: 5px 5px 0px -1px ${theme.default.color.boxShadow};
+  &:last-child {
+    margin-bottom: 0;
+  }
+  * {
+    background: transparent;
+  }
+`;
 
 interface RowProps {
-  align?: 'start' | 'end' | undefined
+  align?: "start" | "end" | undefined;
 }
 
 export const Row = styled.div`

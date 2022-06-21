@@ -7,8 +7,8 @@ export default createGlobalStyle`
   padding: 0;
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
-  background-color: #219ebc;
-  color: #023047;
+  background-color: ${theme.default.color.primary};
+  color: ${theme.default.color.fontColor};
   font-size: ${theme.default.fontSize.medium};
 }
 `;

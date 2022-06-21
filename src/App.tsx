@@ -4,6 +4,7 @@ import { AppQuery } from "./__generated__/AppQuery.graphql";
 import Film from "./relays/Film";
 import Layout from "./Layout";
 import { Card } from "./components";
+import { List } from "./styles";
 
 const App = () => {
   const data = useLazyLoadQuery<AppQuery>(
@@ -28,12 +29,12 @@ const App = () => {
 
   return (
     <Layout>
-        <p>Filmer</p>
-        <ul>
+        <h1>Filmer</h1>
+        <List>
           {films.map((film) => (
             <Film key={film?.id} film={film ?? null} />
           ))}
-        </ul>
+        </List>
     </Layout>
   );
 };

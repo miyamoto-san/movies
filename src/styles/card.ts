@@ -19,10 +19,6 @@ export const Container = styled(motion.li)`
   }
 `;
 
-interface RowProps {
-  align?: "start" | "end" | undefined;
-}
-
 export const Row = styled.div`
   display: flex;
   flex-direction: row;
@@ -33,12 +29,6 @@ export const Row = styled.div`
     flex-wrap: wrap;
   }
 `;
-
-interface ColProps {
-  size?: number | undefined;
-  stretch?: boolean | undefined;
-  justify?: 'center' | undefined;
-}
 
 export const Col = styled.div`
   ${({ size }: ColProps) => size && `width: ${size}%`};

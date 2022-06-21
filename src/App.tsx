@@ -1,7 +1,8 @@
-import logo from "./logo.svg";
+  import logo from "./logo.svg";
 import { useLazyLoadQuery, graphql } from "react-relay";
 import { AppQuery } from "./__generated__/AppQuery.graphql";
 import Film from "./relays/Film";
+import Layout from "./Layout";
 
 const App = () => {
   const data = useLazyLoadQuery<AppQuery>(
@@ -25,7 +26,7 @@ const App = () => {
     .filter(Boolean);
 
   return (
-    <div className="App">
+    <Layout>
       <header className="App-header">
         <p>Filmer</p>
         <ul>
@@ -34,7 +35,7 @@ const App = () => {
           ))}
         </ul>
       </header>
-    </div>
+    </Layout>
   );
 };
 

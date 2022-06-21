@@ -23,16 +23,16 @@ interface ColProps {
 export const Col = styled.div`
   ${({ size }: ColProps) => `width: ${size}%` || undefined};
   ${({ stretch }: ColProps) => stretch && `align-self: stretch`};
-  margin: ${theme.spacing.medium}px 0;
+  margin: ${theme.default.spacing.medium}px 0;
 `;
 
 export const ReleaseDate = styled.time`
   display: flex;
   align-items: end;
   justify-content: end;
-  font-size: ${theme.fontSize.large}px;
+  font-size: ${theme.default.fontSize.large}px;
 `;
 
 export const Name = styled.div`
-  font-size: ${theme.fontSize.large}px;
+  font-size: ${theme.default.fontSize.large}px;
 `;

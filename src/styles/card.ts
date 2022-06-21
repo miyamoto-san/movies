@@ -36,6 +36,9 @@ export const Row = styled.div`
   align-content: stretch;
   ${({ align }: RowProps) => align && `align-items: ${align}`};
   width: 100%;
+  @media (max-width: 1200px) {
+    flex-wrap: wrap;
+  }
 `;
 
 interface ColProps {
@@ -47,6 +50,9 @@ export const Col = styled.div`
   ${({ size }: ColProps) => `width: ${size}%` || undefined};
   ${({ stretch }: ColProps) => stretch && `align-self: stretch`};
   margin: ${theme.default.spacing.medium}px 0;
+  @media (max-width: 1200px) {
+    width: 100%;
+  }
 `;
 
 export const ReleaseDate = styled.time`
@@ -54,6 +60,10 @@ export const ReleaseDate = styled.time`
   align-items: end;
   justify-content: end;
   font-size: ${theme.default.fontSize.large}px;
+  @media (max-width: 1200px) {
+    align-items: start;
+    justify-content: start;
+  }
 `;
 
 export const Name = styled.div`

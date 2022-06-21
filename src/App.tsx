@@ -3,6 +3,7 @@ import { useLazyLoadQuery, graphql } from "react-relay";
 import { AppQuery } from "./__generated__/AppQuery.graphql";
 import Film from "./relays/Film";
 import Layout from "./Layout";
+import { Card } from "./components";
 
 const App = () => {
   const data = useLazyLoadQuery<AppQuery>(
@@ -27,14 +28,14 @@ const App = () => {
 
   return (
     <Layout>
-      <header className="App-header">
         <p>Filmer</p>
         <ul>
           {films.map((film) => (
-            <Film key={film?.id} film={film ?? null} />
+            <Card>
+              <Film key={film?.id} film={film ?? null} />
+            </Card>
           ))}
         </ul>
-      </header>
     </Layout>
   );
 };

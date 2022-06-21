@@ -5,16 +5,23 @@ import {
   Col,
   ReleaseDate,
   Name,
-  ReadMore
+  ReadMore,
 } from "../styles";
 import { Film_film$key } from "./__generated__/Film_film.graphql";
 import { format } from "date-fns";
+import { useState } from "react";
 
 type Props = {
   film: Film_film$key | null;
 };
 
 const Film = ({ film }: Props) => {
+  const [isOpen, setOpen] = useState<boolean>(false);
+
+  const handleReadMore = () => {
+    setOpen(!isOpen);
+  };
+
   const data = useFragment(
     graphql`
       fragment Film_film on Film {
@@ -69,7 +76,9 @@ const Film = ({ film }: Props) => {
       <Row>
         <Col size={33.33} />
         <Col justify="center" size={33.33}>
-          <ReadMore>Read more</ReadMore>
+          <ReadMore onClick={handleReadMore}>
+            Read {isOpen ? "less" : "more"}
+          </ReadMore>
         </Col>
         <Col size={33.33} />
       </Row>
